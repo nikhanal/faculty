@@ -1,17 +1,28 @@
 "use client";
 
-import Card from "./components/Card";
-import img1 from "../public/img.jpg";
+import Card from "../../components/Card";
+import img1 from "../../../public/img.jpg";
 import { styled } from "styled-components";
 
-const CardsContainer = styled.section`
-  width: 95%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+export const CardsContainer = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 `;
 
+export const Title = styled.h1`
+  width: 10%;
+  padding-bottom: 0.3em;
+  color: #333333;
+  border-bottom: 5px solid #7177ff;
+`;
+
+export const Wrapper = styled.section`
+  width: 95%;
+  margin: 0 auto;
+  padding: 2em 0;
+`;
 export default function Home() {
   const facultyMembers = [
     {
@@ -100,12 +111,14 @@ export default function Home() {
     },
   ];
   return (
-    <main>
+    <Wrapper>
+      <Title>Faculty</Title>
+
       <CardsContainer>
         {facultyMembers.map((member) => {
           return <Card detail={member} />;
         })}
       </CardsContainer>
-    </main>
+    </Wrapper>
   );
 }
