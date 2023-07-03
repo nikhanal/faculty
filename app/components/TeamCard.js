@@ -8,7 +8,7 @@ const CardWrapper = styled.section`
   display: flex;
   flex-direction: column;
   border: 1px solid lightgrey;
-  width: 300px;
+  min-width: 300px;
   border-top: 0px;
   margin-top: 10em;
 `;
@@ -63,7 +63,7 @@ const Responsibility = styled.h4`
   font-size: 1rem;
   text-align: center;
 `;
-const Card = ({ detail }) => {
+const TeamCard = ({ detail }) => {
   return (
     <CardWrapper>
       <CardImg>
@@ -83,4 +83,4 @@ const Card = ({ detail }) => {
   );
 };
 
-export default Card;
+export default TeamCard;

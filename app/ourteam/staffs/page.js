@@ -1,8 +1,5 @@
-"use client";
-
-import Card from "../../components/Card";
 import img1 from "../../../public/img.jpg";
-import { Wrapper, Title, CardsContainer } from "../faculty/page";
+import { RenderTeamCards } from "@/app/components/RenderTeamCards";
 
 export default function Home() {
   const StaffMembers = [
@@ -35,15 +32,5 @@ export default function Home() {
       Image: img1,
     },
   ];
-
-  return (
-    <Wrapper>
-      <Title>Staff</Title>
-      <CardsContainer>
-        {StaffMembers.map((member) => {
-          return <Card detail={member} />;
-        })}
-      </CardsContainer>
-    </Wrapper>
-  );
+  return <RenderTeamCards Members={StaffMembers} />;
 }

@@ -1,30 +1,7 @@
-"use client";
-
-import Card from "../../components/Card";
 import img1 from "../../../public/img.jpg";
-import { styled } from "styled-components";
-
-export const CardsContainer = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-`;
-
-export const Title = styled.h1`
-  width: 10%;
-  padding-bottom: 0.3em;
-  color: #333333;
-  border-bottom: 5px solid #7177ff;
-`;
-
-export const Wrapper = styled.section`
-  width: 95%;
-  margin: 0 auto;
-  padding: 2em 0;
-`;
+import { RenderTeamCards } from "@/app/components/RenderTeamCards";
 export default function Home() {
-  const facultyMembers = [
+  const FacultyMembers = [
     {
       id: 1,
       Name: "Er. Shanta Maharjan",
@@ -110,15 +87,5 @@ export default function Home() {
       Image: img1,
     },
   ];
-  return (
-    <Wrapper>
-      <Title>Faculty</Title>
-
-      <CardsContainer>
-        {facultyMembers.map((member) => {
-          return <Card detail={member} />;
-        })}
-      </CardsContainer>
-    </Wrapper>
-  );
+  return <RenderTeamCards Members={FacultyMembers} />;
 }
