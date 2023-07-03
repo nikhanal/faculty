@@ -1,5 +1,5 @@
 import img1 from "../../../public/img.jpg";
-import { RenderTeamCards } from "@/app/components/RenderTeamCards";
+import { RenderTeamCards } from "@/app/components/DepartmentSubdomain/RenderTeamCards";
 export default function Home() {
   const FacultyMembers = [
     {
@@ -14,7 +14,7 @@ export default function Home() {
       Name: "Ms. Dhana Maya Thapa",
       Designation: "Assistant Professor",
       Responsibility: null,
-      Image: img1,
+      Image: null,
     },
     {
       id: 3,

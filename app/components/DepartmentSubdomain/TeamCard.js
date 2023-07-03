@@ -40,9 +40,22 @@ const CardInfo = styled.section`
   flex-direction: column;
   width: 100%;
   box-shadow: 0 4px 4px -4px gray;
-  gap: 0.5em;
+  gap: 0.4em;
+  justify-content: center;
   padding-bottom: 1.5em;
   height: 75px;
+`;
+
+const CardInfoWithoutImg = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.4em;
+  justify-content: center;
+  padding-top: 3em;
+  height: 75px;
+  border-top: 5px solid #f97a00;
+  // min-width: 300px;
 `;
 
 const Title = styled.h2`
@@ -66,19 +79,31 @@ const Responsibility = styled.h4`
 const TeamCard = ({ detail }) => {
   return (
     <CardWrapper>
-      <CardImg>
-        <ImgDiv>
-          <Image src={detail.Image} layout="fill" objectFit="cover" />
-        </ImgDiv>
-        <EmptyDiv></EmptyDiv>
-      </CardImg>
-      <CardInfo>
-        <Title>{detail.Name}</Title>
-        {detail.Responsibility && (
-          <Responsibility>{detail.Responsibility}</Responsibility>
-        )}
-        <Designation>{detail.Designation}</Designation>
-      </CardInfo>
+      {detail.Image ? (
+        <>
+          <CardImg>
+            <ImgDiv>
+              <Image src={detail.Image} layout="fill" objectFit="cover" />
+            </ImgDiv>
+            <EmptyDiv></EmptyDiv>
+          </CardImg>
+          <CardInfo>
+            <Title>{detail.Name}</Title>
+            {detail.Responsibility && (
+              <Responsibility>{detail.Responsibility}</Responsibility>
+            )}
+            <Designation>{detail.Designation}</Designation>
+          </CardInfo>
+        </>
+      ) : (
+        <CardInfoWithoutImg>
+          <Title>{detail.Name}</Title>
+          {detail.Responsibility && (
+            <Responsibility>{detail.Responsibility}</Responsibility>
+          )}
+          <Designation>{detail.Designation}</Designation>
+        </CardInfoWithoutImg>
+      )}
     </CardWrapper>
   );
 };
